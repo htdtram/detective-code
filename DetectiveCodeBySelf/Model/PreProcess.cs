@@ -27,5 +27,10 @@ namespace DetectiveCodeBySelf.Model
         {
             return Regex.Replace(input.Trim(), @"[^\S\r\n]+", " ");
         }
+
+        public static string RemovePackage(string input)
+        {
+            return Regex.Replace(input, @"using(.*?)\r?\n", " ");
+        }
     }
 }
